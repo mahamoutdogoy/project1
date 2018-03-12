@@ -1,5 +1,5 @@
 <html>
-	<head><center><h1>Donor Detailss</h1><center></head>
+	<head><center><h1>Donor Details</h1><center></head>
 	<style>
 		body
 		{
