@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   	<meta name="Description" content="A Registration Form">
   	<meta name="Author" content="Nanda">
-  	<center><h1>Sign In Page</h1></center>
+  	<center><h1>Admin Page</h1></center>
 </head>
 	<style>
 		body
@@ -83,8 +83,8 @@
 	<table cellpadding="15" align="center" class="table">
 	<form action="" method="POST">
 	<tr>
-		<td>Email ID:</td>
-		<td><input type="email" class="text" name="email"></td>
+		<td>Username:</td>
+		<td><input type="text" class="text" name="username"></td>
 	</tr>
 	<tr>
 		<td>Password:</td><br>
@@ -93,7 +93,7 @@
 	</table><br>
 	<center><b><input type="submit" class="button" name="login" value="Sign In"></b></center><br>
 		<center><input type="reset" class="button" name="reset" value="Clear"></center><br>
-		<center><b><input type="submit" class="button" name="register" value="Register"></b></center><br>
+		
 		</table>
 	<h3><center><a href="Home.php">Home</a></center></h3>
 	</body>
@@ -104,28 +104,26 @@
 require('db.php');
 	
 
-	if (isset($_POST['email'])){
+	if (isset($_POST['username'])){
 		
-		$email = stripslashes($_REQUEST['email']); // removes backslashes
-		$email = mysqli_real_escape_string($con,$email); //escapes special characters in a string
+		$username = stripslashes($_REQUEST['username']); // removes backslashes
+		$username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
 		
 	
-        $query = "SELECT * FROM `registration` WHERE email='$email' and password='$password'";
+        $query = "SELECT * FROM `adminlog` WHERE username='$username' and password='$password'";
 		$result = mysqli_query($con,$query) or die(mysql_error());
 		$rows = mysqli_num_rows($result);
         if($rows==1){
-			$_SESSION['email'] = $username;
-			header("Location: PersonalDetails.php"); // Redirect user to index.php
+			
+			header("Location: adminhome.php"); // Redirect user to index.php
             }else{
-				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/></div>";
 				}
 
 
-if(isset($_POST['register'])){
-		header("Location: Registration.php");
-	}
+
 	}
 
 ?>

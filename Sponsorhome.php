@@ -93,8 +93,8 @@
 
  
 
- if(isset($_POST['Donate'])){
-		header("Location: Paymentinfo.php");
+ if(isset($_POST['sponsor'])){
+		header("Location: sponsor1.php");
 	}
 
 	if(isset($_POST['cancel'])){

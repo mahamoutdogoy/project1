@@ -123,7 +123,7 @@ require('db.php');
       if($result){
       	
 
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='DonorSignin.php'>Signin </a></div>"; 
+        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='SponsorSignin.php'>Signin </a></div>"; 
 
 
 

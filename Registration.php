@@ -60,11 +60,11 @@
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
   			<li style="float:left"><a class="active"href="Home.php">Home</a></li>
-  			<li><a href="PersonalDetails.php">About</a></li>
+  			<li><a href="">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
   			<li><a href="">Admin</a></li>
-  			<li><a href="Donation.php">Donate</a></li>
-  			<li><a href="Donation.php">Sponsor</a></li>
+  			<li><a href="">Donate</a></li>
+  			<li><a href="">Sponsor</a></li>
   			<li><a href="">Contact Us</a></li>
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li>
@@ -73,7 +73,7 @@
 			<tr>
 				<td>
 				<center><img src="images/Capture.PNG" ></center><br>
-				<form action ="#"method="POST">
+				<form action ="PersonalDetails.php" method="POST">
 					<input type="text" class="text" name="username" placeholder="Username" required><br>
 					<br>					
 					<input type="email" class="text" name="email" placeholder="Email ID" required><br>
@@ -82,7 +82,7 @@
 					<br>					 
 					<input type="password" class="text" name="password" placeholder="Password"required><br>
 					<br>
-					<input type="password" class="text" name="password" placeholder="Confirm Password"required><br>
+					<input type="password" class="text" name="cpassword" placeholder="Confirm Password"required><br>
 					<br>
 					<font color="white">Gender:</font><br><br>
 					<font color="white"><input type="radio" name="gender" value="Male">Male
@@ -115,21 +115,24 @@ require('db.php');
 		$gender = stripslashes($_REQUEST['gender']);
 		$gender = mysqli_real_escape_string($con,$gender);
 
-		// $trn_date = date("Y-m-d H:i:s");
-        $query = "INSERT into `Registration` (username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";
+
+
+        $query = "INSERT INTO `registration` (username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";
         $result = mysqli_query($con,$query);
-        
       if($result){
       	
 
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='Signin.php'> </a></div>"; 
+        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='PersonalDetails.php'> fill details </a></div>"; 
 
 
-
+   
 
 
  }
+ else{
+ 		echo "problem";
     }
+ }
 
 	
 ?>
