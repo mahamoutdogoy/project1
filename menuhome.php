@@ -210,17 +210,15 @@
 
 <div id='cssmenu'>
 <ul>
-   <li><a href='adminhome.php'><span>Home</span></a></li>
+   <li><a href='#'><span>Home</span></a></li>
    <li class='active has-sub'><a href='#'><span>Student</span></a>
       <ul>
          <li class='has-sub'><a href='#'><span>View</span></a>
             <ul>
-               <li><a href='scholars.php'><span>Scholars</span></a></li>
-               <li class='last'><a href='Sponsored.php'><span>Sponsored</span></a></li>
-               <li class='active has-sub'><a href='#'><span>All details</span></a>
-
-
-                </ul>
+               <li><a href='#'><span>Scholars</span></a></li>
+               <li class='last'><a href='#'><span>Sponsor</span></a></li>
+               <li class='last'><a href='#'><span>All details</span></a></li>
+      </ul>
   </li>
 
 
@@ -256,8 +254,8 @@
   
          <li class='has-sub'><a href='#'><span>Donor</span></a>
             <ul>
-               <li><a href='ViewdonorD.php'><span>View donor details</span></a></li>
-               <li class='last'><a href='ViewdonorW.php'><span>View donor work</span></a></li>
+               <li><a href='#'><span>View donor details</span></a></li>
+               <li class='last'><a href='#'><span>View donor work</span></a></li>
                
             </ul>
 
@@ -266,53 +264,15 @@
 
 <li class='has-sub'><a href='#'><span>Sponsor</span></a>
             <ul>
-               <li><a href='ViewsponsorD.php'><span>View sponsor details</span></a></li>
-               <li class='last'><a href='ViewsponsorW.php'><span>View sponsor work</span></a></li>
+               <li><a href='#'><span>View sponsor details</span></a></li>
+               <li class='last'><a href='#'><span>View sponsor work</span></a></li>
                
             </ul>
 
 
-</div>
- <br><br><br>
-      
 
-      <table border="1" class="table" cellpadding="7"><br>
-          <tr>
-            <th>Scholar username</th>
-            <th>Scholar first name</th>
-            <th>Scholar last name</th>
-            <th>amount</th>
-          </tr> 
-          <tr>
-          <?php
-          require('db.php');
+
   
-               //storing the selected value in the php variable  
-            $query3 = "SELECT scholars.usern, personal.firstname, personal.lastname, scholars.amount FROM scholars LEFT JOIN personal ON scholars.usern = personal.usern LEFT JOIN registration ON scholars.usern = registration.username";
-            $result3 = $con->query($query3);
-            while($rows3 = mysqli_fetch_array($result3)){
-              $usern = $rows3['usern'];  
-              $fristname = $rows3['firstname'];
-              $lastname = $rows3['lastname'];
-              $amount = $rows3['amount']; 
-              ?>
-              <tr>
-              <td><?php echo $usern; ?></td>
-              <td><?php echo $fristname; ?></td>
-              <td><?php echo $lastname; ?></td>
-              <td><?php echo $amount; ?></td>
-              </tr>
-
-              <?php
-              }
-            
-          ?>
-          </tr>
-          <br>
-        </table>
- 
-  
-
+   
 </body>
-</html>
-
+<html>
