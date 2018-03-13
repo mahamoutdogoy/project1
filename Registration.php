@@ -73,7 +73,7 @@
 			<tr>
 				<td>
 				<center><img src="images/Capture.PNG" ></center><br>
-				<form action ="PersonalDetails.php" method="POST">
+				<form action ="" method="POST">
 					<input type="text" class="text" name="username" placeholder="Username" required><br>
 					<br>					
 					<input type="email" class="text" name="email" placeholder="Email ID" required><br>
