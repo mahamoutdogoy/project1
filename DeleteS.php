@@ -201,6 +201,15 @@
 }
 
 
+.delete1
+
+ {
+
+  width: 200px;
+}
+
+
+
 
 
 
@@ -227,8 +236,9 @@
 
          <li class=' active has-sub'><a href='#'><span>Delete</span></a>
             <ul>
+               <li class="has-sub"><a href='DeleteS.php'><span>Delete duplicate  </span></a></li>
              
-               <li class='last'><a href='DeleteS.php'><span>Duplicate </span></a></li>
+              
             </ul>
         </li>
 
@@ -272,8 +282,86 @@
 
 
 
+</div>
 
+ <br><br><br>
+      
+
+      <table border="1" class="table" cellpadding="7"><br>
+          <tr>
+            <th>Sponsor Username</th>
+            <th>Student email</th>
+            <th>Student phone</th>
+            <th>Student gender</th>
+            <th>Student firstname</th>
+            <th>Student lastname</th>
+            <th>Institution</th>
+          </tr> 
+          <tr>
+          <?php
+          require('db.php');
   
-   
+               //storing the selected value in the php variable  ss
+            $query3 = "SELECT registration.username, registration.email, registration.phone, registration.gender, personal.firstname, personal.lastname, education.insdeg FROM registration LEFT JOIN personal ON registration.username = personal.usern LEFT JOIN education ON registration.username = education.usern  WHERE registration.username NOT IN (SELECT usern FROM applied)";
+            $result3 = $con->query($query3);
+              while($rows3 = mysqli_fetch_array($result3)){
+             $username = $rows3['username'];  
+              $email = $rows3['email'];
+              $phone = $rows3['phone'];
+              $gender = $rows3['gender'];
+              $firstname = $rows3['firstname'];
+              $lastname = $rows3['lastname'];
+              $insdeg = $rows3['insdeg'];
+
+              
+              ?>
+              <tr>
+              <td><?php echo $username; ?></td>
+              <td><?php echo $email; ?></td>
+              <td><?php echo $phone; ?></td>
+              <td><?php echo  $gender; ?></td>
+              <td><?php echo $firstname; ?></td>
+              <td><?php echo $lastname; ?></td>
+              <td><?php echo  $insdeg; ?></td>
+              
+              </tr>
+
+              <?php
+              }
+            
+          ?>
+          </tr>
+          <br>
+        </table>
+        <form method="POST">
+          <input type="submit" name="deletion" value="delete">          
+        </form>
+        
+        
+
+
+
+    <?php
+         require('db.php');
+              
+         if(isset($_POST['deletion'])){ 
+
+                  $query4 = "DELETE FROM registration WHERE registration.username NOT IN (SELECT usern FROM applied)";
+                  $result4 = $con->query($query4);
+                  if ( $result4) {
+                    echo " monish deleted successfully our things";
+                  }
+                  
+              }
+              else
+                    {
+                               echo "problem";
+                     }
+            
+          ?>
+       
+  
+
 </body>
-<html>
+</html>
+
