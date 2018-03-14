@@ -81,7 +81,9 @@
 	</ul></align>
 	
 	<form action="#" method="POST">
-	
+	<?php
+							$Donate  = $_GET['q']; 
+						?>
 	<center><b><input type="submit" class="button" name="Donate" value="Make a Donation"></b></center><br>
 		<center><input type="submit" class="button" name="cancel" value="Cancel"></center><br>
 	
@@ -94,7 +96,7 @@
  
 
  if(isset($_POST['Donate'])){
-		header("Location: Paymentinfo.php");
+		header("Location: http://localhost/Scholarship/PaymentInfo.php?q=$Donate");
 	}
 
 	if(isset($_POST['cancel'])){

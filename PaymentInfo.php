@@ -85,7 +85,10 @@
 				<td>
 				<center><img src="images/Capture.PNG" ></center><br>
 				<center><form action="" method="post"> 
-					<input type="text" class="card" name="username" placeholder="username"  required><br><br>
+					<?php
+						$usern2  = $_GET['q']; 
+						?>
+						<input type="text" class="text" name="username" placeholder="Username" value="<?php echo $usern2?>" required><br><br>
 					<input list="donate" name="card" placeholder="Donate with Card" class="card" required>
 						<datalist id="donate">
 							<option value="Credit Card">

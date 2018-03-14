@@ -110,7 +110,7 @@
 							$sid = $rows1['usern'];		//storing the value selected form the displayed lsit				
 							$rowsData1 = $rows1['usern'];	//displaying the values from the table
 							?>
-							<option value="<?php echo $sid;?>"><?php echo $rowsData1;?></option>nbsp
+							<option value="<?php echo $sid;?>"><?php echo $rowsData1;?></option>&nbsp
 							<?php
 							}
 						?> 
@@ -164,7 +164,11 @@
 					<br>
 				</table><br>
 				<br><input type="text" name="username2" placeholder="enter the username of the student" class="box">&nbsp&nbsp&nbsp&nbsp
-				 <input type="text" name="sponsorname" placeholder="enter your username" class="box">
+					
+				 <?php
+						$usern2  = $_GET['q']; 
+						?>
+						<input type="text" class="text" name="sponsorname" placeholder="Username" value="<?php echo $usern2?>" required><br><br>
 				 &nbsp&nbsp&nbsp&nbsp
 				 <input type="text" name="sponsoramount" placeholder="amount" class="box"> 
 				<br><br>

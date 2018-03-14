@@ -81,7 +81,9 @@
 	</ul></align>
 	
 	<form action="#" method="POST">
-	
+						<?php
+							$sponsor  = $_GET['q']; 
+						?>
 	<center><b><input type="submit" class="button" name="sponsor" value="Sponsor a Kid Now!"></b></center><br>
 		<center><input type="submit" class="button" name="cancel" value="Cancel"></center><br>
 	
@@ -94,7 +96,7 @@
  
 
  if(isset($_POST['sponsor'])){
-		header("Location: sponsor1.php");
+		header("Location: http://localhost/Scholarship/Sponsor1.php?q=$sponsor");
 	}
 
 	if(isset($_POST['cancel'])){

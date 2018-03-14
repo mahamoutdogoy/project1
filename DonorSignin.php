@@ -118,7 +118,7 @@ require('db.php');
 	if($result){
 	
 		//echo "<script type='text/javascript'>alert('')</script>";
-		header("Location: Donatehome.php");
+		header("Location: http://localhost/Scholarship/Donatehome.php?q=$username");
 		exit();
 	}
 	elseif($result1==false){

@@ -118,7 +118,7 @@ require('db.php');
 	if($result){
 	
 		//echo "<script type='text/javascript'>alert('')</script>";
-		header("Location: Sponsorhome.php");
+		header("Location: http://localhost/Scholarship/Sponsorhome.php?q=$username");
 		exit();
 	}
 	elseif($result1==false){
