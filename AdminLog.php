@@ -79,6 +79,8 @@
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li> -->
 	</ul></align>
+
+
 	<table>
 	<table cellpadding="15" align="center" class="table">
 	<form action="" method="POST">
@@ -98,6 +100,10 @@
 	<h3><center><a href="Home.php">Home</a></center></h3>
 	</body>
 </html>
+<?php
+session_start();
+
+?>
 
 <?php
 

@@ -201,6 +201,25 @@
 }
 
 
+.logout
+
+ {
+  float: right;
+  
+}
+.logout a
+{
+  
+  text-decoration: none;
+}
+button
+{
+ width: 90px;
+ height: 40px;
+ border-radius: 10px;
+}
+
+
 
 
 
@@ -234,7 +253,7 @@
 
 
 
-
+         
                    
                   <li class='active has-sub'><a href='#'><span>reward</span></a>
                       
@@ -271,9 +290,32 @@
             </ul>
 
 
+           
+</div>
 
 
+</div>
+
+
+
+
+
+
+<!-- 
+   <h1>Welcome</h1><br>
+<?php
+//echo $_SESSION['username'];
+?> -->
+
+<div class="logout">
   
+    <h2><button><a href="logout.php">Logout here</a> </h2></button>
+</div>
+
+
    
 </body>
+
+
 <html>
+
