@@ -93,7 +93,10 @@
 					
 					<tr>
 						<td><font color="white" size="4">Username:</font></td>
-						<td><input type="text" name="usern" placeholder="Username" required></td>
+						<?php
+						$usern  = $_GET['q']; 
+						?>
+						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required></td>
 					</tr>				
 
 

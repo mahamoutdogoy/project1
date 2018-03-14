@@ -72,6 +72,7 @@
 				<td>
 				<center><img src="images/Capture.PNG" ></center><br>
 				<form action="" method="POST">
+
 					<input type="text" class="text" name="name" placeholder="Name as per Bank Account" required><br>
 					<br>					
 					<input list="acctype" class="text" name="acctype" placeholder="Nature of Account Maintained" required>
@@ -88,7 +89,10 @@
 					<br>
 					<input type="text" class="text" name="ifsc" placeholder="IFSC Code"required><br>
 					<br>
-					<input type="text" class="text" name="usern" placeholder="username"required><br><br>
+					<?php
+						$usern  = $_GET['q']; 
+						?>
+						<input type="text" class="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required><br><br>
 					<center><b><input type="submit" class="button" name="info" value="Next"></b></center><br>
 				</form>
 			</td>
@@ -123,7 +127,7 @@ require('db.php');
    	//          $_SESSION['usern'] = $usern;
 			 // header("Location: FeeDetails.php");
 			   	 // echo "<div class='form'><h2>inserted successfully.</h2>";  
-                            echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='Applied.php'> fill details</a></div>"; 
+                            echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/applied.php?q=$usern'> fill details</a></div>"; 
 
         	}	
 }

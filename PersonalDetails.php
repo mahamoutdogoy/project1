@@ -137,7 +137,10 @@
 					</tr>	
 					<tr>
 						<td><font color="white" size="5">Username:</font></td>
-						<td><input type="text" name="usern" placeholder="Username" required></td>
+						<?php
+						$usern  = $_GET['q']; 
+						?>
+						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required></td>
 					</tr>				
 		</table>
 		<br>
@@ -174,17 +177,17 @@ require('db.php');
 		$pin   = mysqli_real_escape_string($con,$pin);
 		$physic = stripslashes($_REQUEST['physic']);
 		$physic  = mysqli_real_escape_string($con,$physic);
-		$usern  = stripslashes($_REQUEST['usern']); 
-		$usern = mysqli_real_escape_string($con,$usern); 
+		// $usern  = $_GET['q']; 
+		// $usern = mysqli_real_escape_string($con,$usern); 
 
 	$query = "INSERT INTO `personal` (firstname,lastname,dob,age,adhar,address,street,city,state,pin,physic,usern) VALUES ('$firstname','$lastname','$dob','$age','$adhar','$address','$street','$city','$state','$pin','$physic','$usern')";
 	$result = mysqli_query($con,$query);
 	   // $rows = mysqli_num_rows($result);
    if($result){
    	//          $_SESSION['usern'] = $usern;
-			 // header("Location:Education.php");
+			  // header("Location:Education.php");
 			   	  
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='Family.php'> fill details</a></div>"; 
+        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/Family.php?q=$usern'> fill details</a></div>"; 
         	}	
 }
 ?>

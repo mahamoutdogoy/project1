@@ -121,8 +121,8 @@ require('db.php');
         $result = mysqli_query($con,$query);
       if($result){
       	
-
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='PersonalDetails.php'> fill details </a></div>"; 
+                       header("Location: http://localhost/Scholarship/PersonalDetails.php?q=$username"); 
+        	  // echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='PersonalDetails.php'> fill details </a></div>"; 
 
 
    

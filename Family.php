@@ -113,7 +113,10 @@
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Username:</font></td>
-						<td><input type="text" name="usern" placeholder="Username" required></td>
+												<?php
+						$usern  = $_GET['q']; 
+						?>
+						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required></td>
 					</tr>
 							
 		</table>
@@ -151,7 +154,7 @@ require('db.php');
    	//          $_SESSION['usern'] = $usern;
 			 // header("Location: BankDetails.php");
 			   	 // echo "<div class='form'><h2>inserted successfully.</h2>";  
-   	echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='Education.php'> fill details</a></div>"; 
+   	echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/Education.php?q=$usern'> fill details</a></div>"; 
         	}	
 }
 ?>

@@ -91,7 +91,10 @@
 			
 				<tr>
 					<td><font color="white" size="4">Username:</font></td><br>
-					<td><input type="text" size="1" name="usern" placeholder="Username"  required></td>
+					<?php
+						$usern  = $_GET['q']; 
+						?>
+						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required></td>
 			</tr>
 						
 			<tr>
@@ -144,7 +147,7 @@ require('db.php');
    	//          $_SESSION['usern'] = $usern;
 			 // header("Location: Home.php");
 			   	 // echo "<div class='form'><h2>inserted successfully.</h2>"; 
-			   	 echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='BankDetails.php'> fill details</a></div>";  
+			   	 echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/BankDetails.php?q=$usern'> fill details</a></div>";  
         	}	
 }
 ?>

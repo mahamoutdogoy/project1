@@ -349,15 +349,10 @@
                   $query4 = "DELETE FROM registration WHERE registration.username NOT IN (SELECT usern FROM applied)";
                   $result4 = $con->query($query4);
                   if ( $result4) {
-                    echo " monish deleted successfully our things";
+                    echo " deleted successfully ";
                   }
                   
               }
-              else
-                    {
-                               echo "problem";
-                     }
-            
           ?>
        
   
