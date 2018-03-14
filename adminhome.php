@@ -258,7 +258,7 @@ button
                   <li class='active has-sub'><a href='#'><span>reward</span></a>
                       
                   <ul>
-                           <li class="last"><a href='#'><span>Sub Product</span></a></li>
+                           <li class="last"><a href='Reward.php'><span>Update </span></a></li>
                            <li class='last'><a href='#'><span>Sub </span></a></li>
                   </ul>
                </li>

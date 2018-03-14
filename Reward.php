@@ -201,6 +201,15 @@
 }
 
 
+.delete1
+
+ {
+
+  width: 200px;
+}
+
+
+
 
 
 
@@ -227,9 +236,9 @@
 
          <li class=' active has-sub'><a href='#'><span>Delete</span></a>
             <ul>
-               <li class="has-sub"><a href='#'><span>Sub </span></a></li>
+               <li class="has-sub"><a href='DeleteS.php'><span>Delete duplicate  </span></a></li>
              
-               <li class='last'><a href='#'><span>Sub </span></a></li>
+              
             </ul>
         </li>
 
@@ -272,50 +281,93 @@
             </ul>
 
 
-</div>
- <br><br><br>
-      
 
-      <table border="1" class="table" cellpadding="7"><br>
+</div>
+
+ <br><br><br>
+
+ <form action="" method="POST">
+  <input type="text" name="percent10" placeholder="Enter the 10th grade">&nbsp&nbsp&nbsp
+  <input type="text" name="percent12" placeholder="Enter the 12th grade">&nbsp&nbsp&nbsp
+  <input type="text" name="tincome" placeholder="Enter annual income">&nbsp&nbsp&nbsp
+  <input type="text" name="tuition1" placeholder="Enter the fees"><br><br>
+  <input type="text" name="scholarshipamnt" placeholder="Enter the amount">&nbsp&nbsp&nbsp
+  <input type="submit" name="Submit" value="Search">
+  <table border="1" class="table">
           <tr>
-            <th>Scholar username</th>
-            <th>Scholar first name</th>
-            <th>Scholar last name</th>
-            <th>Gender</th>
-            <th>amount</th>
+            <th>Student Username</th>
+            <th>Student Firstname</th>
+            <th>Student Lastname</th>
+            <th>Student 10th grade</th>
+            <th>Student 12th grade</th>
+            <th>Student annual income</th>
+            <th>Student fees paid</th>
+            <th>Student status</th>           
           </tr> 
-          <tr>
-          <?php
-          require('db.php');
-  
-               //storing the selected value in the php variable  
-            $query3 = "SELECT scholars.usern, personal.firstname, personal.lastname, registration.gender, scholars.amount FROM scholars LEFT JOIN personal ON scholars.usern = personal.usern LEFT JOIN registration ON scholars.usern = registration.username";
-            $result3 = $con->query($query3);
-            while($rows3 = mysqli_fetch_array($result3)){
-              $usern = $rows3['usern'];  
-              $fristname = $rows3['firstname'];
+  <tr><br><br><br>
+  <?php
+    require('db.php');
+    if(isset($_POST['percent10'])){
+
+    $percent10 = $_POST['percent10'];
+    $percent12 = $_POST['percent12'];
+    $tincome = $_POST['tincome'];
+    $tuition1 = $_POST['tuition1'];
+    $scholarshipamnt = $_POST['scholarshipamnt'];
+
+    if(isset($_POST['Submit'])){
+      
+      $query = "SELECT registration.username, personal.firstname, personal.lastname, education.percent10, education.percent12, family.tincome, fees.tuition1, scholarship.status FROM  registration LEFT JOIN personal ON registration.username=personal.usern LEFT JOIN education ON registration.username=education.usern LEFT JOIN family ON registration.username=family.usern LEFT JOIN fees ON registration.username=fees.usern LEFT JOIN scholarship ON registration.username=scholarship.usern WHERE education.percent10 >= '$percent10' AND education.percent12 >= '$percent12' AND family.tincome<='$tincome' AND fees.tuition1<='$tuition1' AND scholarship.status='no'";
+       
+      $result = $con->query($query);
+      
+      while($rows3 = mysqli_fetch_array($result)){
+              $username = $rows3['username'];
+              $firstname = $rows3['firstname']; 
               $lastname = $rows3['lastname'];
-              $gender = $rows3['gender'];
-              $amount = $rows3['amount']; 
+              $percent10 = $rows3['percent10'];
+              $percent12 = $rows3['percent12'];
+              $tincome = $rows3['tincome'];
+              $tuition1 = $rows3['tuition1'];
+              $status = $rows3['status'];
+  
+              $query3 = "INSERT INTO scholars (usern,amount) VALUES ('$username','$scholarshipamnt')";
+
+              $result2 = $con->query($query3);
+
               ?>
               <tr>
-              <td><?php echo $usern; ?></td>
-              <td><?php echo $fristname; ?></td>
+              <td><?php echo $username; ?></td>
+              <td><?php echo $firstname; ?></td>
               <td><?php echo $lastname; ?></td>
-              <td><?php echo $gender; ?></td>
-              <td><?php echo $amount; ?></td>
+              <td><?php echo $percent10; ?></td>
+              <td><?php echo $percent12; ?></td>
+              <td><?php echo $tincome; ?></td>
+              <td><?php echo $tuition1; ?></td>
+              <td><?php echo $status; ?></td>
               </tr>
 
               <?php
               }
-            
+            }
+               }
           ?>
           </tr>
-          <br>
         </table>
- 
-  
+        <br><br>
+        <input type="submit" name="Reward" value="Reward Them!!">
+        <?php
+          if(isset($_POST['Reward'])){
 
+            $query4 = "UPDATE scholarship, scholars SET scholarship.status='yes' WHERE scholarship.usern =scholars.usern";
+
+              $result4 = $con->query($query4);
+              if($result4){
+                echo"Successfully updated";
+              }
+            
+          } 
+        ?>
+  </form>
 </body>
 </html>
-
