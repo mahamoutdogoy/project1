@@ -64,6 +64,29 @@
 			background-color: #392F2F;
     		color: white;
 		}
+
+
+		.logout
+
+ {
+  float: right;
+    padding-top: : 100px;
+  
+}
+.logout a
+{
+  
+  text-decoration: none;
+
+}
+button
+{
+ width: 90px;
+ height: 40px;
+ border-radius: 10px;
+}
+
+
 	</style>
 	<body>
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
@@ -79,6 +102,10 @@
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li> -->
 	</ul></align>
+	<div class="logout">
+  
+    <h2><button><a href="logout.php">Logout here</a> </h2></button>
+</div>
 	
 	<form action="#" method="POST">
 	<?php
@@ -90,6 +117,10 @@
 		</table>
 
 	</body>
+
+
+	
+
 </html>
 <?php 
 

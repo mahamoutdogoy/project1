@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   	<meta name="Description" content="A Registration Form">
   	<meta name="Author" content="">
-  	<center><h1>Sign In Page</h1></center>
+  	<center><h1>Sponsor Sign In Page</h1></center>
 </head>
 	<style>
 		body
