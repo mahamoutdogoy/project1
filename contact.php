@@ -17,6 +17,8 @@
   text-align:center;
   margin-top:50px;
   font-size:200%;
+  background: url('images/yellow.jpg') no-repeat;
+ background-size: cover;
 }
 
 form {
@@ -333,7 +335,7 @@ input[type=submit] {
 
 <div id="contactform">
   <form id="contact-form" class="contact-form" action="#" method="post">
-    <h1>Popup Form</h1>
+
     <ul>
       <li class="comment">
         <!--Tip: textarea breaks if tags are not in the same line or broken up somehow -->
@@ -344,7 +346,7 @@ input[type=submit] {
         <span class="char-counter"></span>
       </li>
       <li class="name">
-        <input type="text" class="input-name" name="name" placeholder="ie. Joe McDoodle" spellcheck="false" min-length="2" max-length="40" required />
+        <input type="text" class="input-name" name="name" placeholder="ie. joe" spellcheck="false" min-length="2" max-length="40" required />
         <label for="name">Name</label>
         <span class="notification"></span>
         <span class="required"><strong><small><em> (required)</em></small></strong></span>

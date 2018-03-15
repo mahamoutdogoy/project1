@@ -43,6 +43,7 @@
   background: linear-gradient(to bottom, #333333 0%, #141414 100%);
   border-bottom: 2px solid #0fa1e0;
   width: auto;
+
 }
 #cssmenu:after,
 #cssmenu ul:after {
@@ -63,6 +64,7 @@
   font-family: Helvetica, Arial, Verdana, sans-serif;
   padding: 19px 20px;
   text-decoration: none;
+
 }
 #cssmenu ul {
   list-style: none;
@@ -259,7 +261,7 @@ button
                       
                   <ul>
                            <li class="last"><a href='Reward.php'><span>Update </span></a></li>
-                           <li class='last'><a href='#'><span>Sub </span></a></li>
+                      
                   </ul>
                </li>
 

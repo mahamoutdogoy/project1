@@ -115,7 +115,6 @@ h2
 <body>
 <div class="menu">
 <ul>
-   <li><a href="alldetails.php">Home</a></li>
  <li><a href="#">STUDENT</a></li>
  <li><a href="#">DONOR</a>
   <ul>
@@ -152,7 +151,7 @@ h2
           require('db.php');
   
                //storing the selected value in the php variable  
-            $query3 = "SELECT applied.usern, personal.firstname, personal.lastname, education.percent10, education.percent12, education.insdeg, education.ccourse, education.nature,fees.tuition1 FROM applied LEFT JOIN personal ON applied.usern = personal.usern LEFT JOIN education ON applied.usern = education.usern LEFT JOIN fees ON applied.usern = fees.usern";
+            $query3 = "SELECT applied.usern, personal.firstname, personal.lastname, education.percent10, education.percent12, education.insdeg, education.ccourse, education.nature,fees.total FROM applied LEFT JOIN personal ON applied.usern = personal.usern LEFT JOIN education ON applied.usern = education.usern LEFT JOIN fees ON applied.usern = fees.usern";
             $result3 = $con->query($query3);
             while($rows3 = mysqli_fetch_array($result3)){
               $firstname = $rows3['firstname'];  
@@ -162,7 +161,7 @@ h2
               $insdeg = $rows3['insdeg'];
               $ccourse = $rows3['ccourse'];
               $nature = $rows3['nature'];
-              $tuition1 = $rows3['tuition1'];
+              $total = $rows3['total'];
                 
               ?>
               <tr>
