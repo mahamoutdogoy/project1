@@ -2,6 +2,7 @@
 <html>
 <head>
 	<center><h1>Fee Details</h1></center>
+	<script type="text/javascript" src="jquery.min.js"></script>
 </head>
 <style>
 		body
@@ -108,12 +109,12 @@
 			</tr>
 			<tr>
 				<td><font color="white" size="4">Tuition Fees</font></td>
-				<td><input type="text" name="tuition1" class="text" ></td>
-				<td><input type="text" name="tuition2" class="text" ></td>
-				<td><input type="text" name="tuition3" class="text" ></td>
-				<td><input type="text" name="tuition4" class="text" ></td>
+				<td><input type="text" name="tuition1" class="number" ></td>
+				<td><input type="text" name="tuition2" class="number" ></td>
+				<td><input type="text" name="tuition3" class="number" ></td>
+				<td><input type="text" name="tuition4" class="number" ></td>
 				
-				<td><input type="text" name="total" class="text" ></td>
+				<td><input type="text" name="total" class="number1" id="total" readonly></td>
 			</tr>
 			
 			
@@ -121,6 +122,16 @@
 		<center><b><input type="submit" class="button" name="edu_next" value="Next"></b></center><br>
 		<center><b><input type="reset" class="button" name="edu_reset" value="Clear"></b></center><br>
 		</form>
+
+		<script>
+    $('.number').keyup(function() {
+        var sum = 0;
+        $('.number').each(function() {
+            sum += Number($(this).val());
+        });
+        $('#total').val(sum);
+    });
+</script>
 	</body>
 </html>
 <?php

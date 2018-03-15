@@ -282,23 +282,28 @@
             <th>Donor username</th>
             <th>Donor payment type</th>
             <th>Donated amount</th>
+            <th>Date of Donation</th>
           </tr> 
           <tr>
           <?php
           require('db.php');
   
                //storing the selected value in the php variable  
-            $query3 = "SELECT username,card,amount FROM payment";
+            $query3 = "SELECT username,card,amount,trn_date FROM payment";
             $result3 = $con->query($query3);
             while($rows3 = mysqli_fetch_array($result3)){
               $username = $rows3['username'];  
               $card = $rows3['card'];
               $amount = $rows3['amount'];
+              $trn_date = $rows3['trn_date'];
+
+
               ?>
               <tr>
               <td><?php echo $username; ?></td>
               <td><?php echo $card; ?></td>
               <td><?php echo $amount; ?></td>
+              <td><?php echo $trn_date; ?></td>
               </tr>
 
               <?php

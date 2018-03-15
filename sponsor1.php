@@ -178,13 +178,18 @@
 							$sponsorkid2 = $_POST['username2'];
 							$sponsor = $_POST['sponsorname'];
 							$sponsoramount = $_POST['sponsoramount'];
+
+							$trn_date = date("Y-m-d H:i:s");
+
 							$query4 = "UPDATE sponsorship SET status='yes' WHERE usern = '$sponsorkid2'";
-							$query5 = "INSERT into `sponsored` (usern,sponusern,amount) VALUES ('$sponsorkid2','$sponsor','$sponsoramount')";
+							$query5 = "INSERT into `sponsored` (usern,sponusern,amount,trn_date) VALUES ('$sponsorkid2','$sponsor','$sponsoramount',
+							'$trn_date')";
 						$result4 = $con->query($query4);
 						$result5 = $con->query($query5);
 						if($result4){
 							echo"$sponsorkid2";
 							echo"Successfully updated";
+							header("Location: ThanksS.php");
 						}
 						else{
 							echo"some error in updating";

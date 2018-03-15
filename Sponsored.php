@@ -228,9 +228,8 @@
 
          <li class=' active has-sub'><a href='#'><span>Delete</span></a>
             <ul>
-               <li class="has-sub"><a href='#'><span>Sub </span></a></li>
-             
-               <li class='last'><a href='#'><span>Sub </span></a></li>
+               <li class="has-sub"><a href='#'><span>Duplicate </span></a></li>
+           
             </ul>
         </li>
 

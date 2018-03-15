@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   	<meta name="Description" content="A Registration Form">
   	<meta name="Author" content="">
-  	<center><h1>Sponsor Sign In Page</h1></center>
+  	<center><h1>Sponsor	 Sign In Page</h1></center>
 </head>
 	<style>
 		body
@@ -68,14 +68,14 @@
 	<body>
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
-  			<!-- <li style="float:left"><a class="active"href="Home.php">Home</a></li>
-  			<li><a href="PersonalDetails.php">About</a></li>
+  			<li style="float:left"><a class="active"href="Home.php">Home</a></li>
+  			<li><a href="">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
-  			<!-- <li><a href="Registration.php">Register</a></li> -->
-  			<li><a href="">Admin</a></li>
-  			<li><a href="Donation.php">Donate</a></li>
-  			<li><a href="Donation.php">Sponsor</a></li>
-  			<li><a href="">Contact Us</a></li>
+  		
+  			<li><a href="adminhome.php">Admin</a></li>
+  			<li><a href="DonorSignin.php">Donate</a></li>
+  			<li><a href="SponsorSignin.php">Sponsor</a></li>
+  			<li><a href="contact.php">Contact Us</a></li>
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li> -->
 	</ul></align>
@@ -88,7 +88,7 @@
 	</tr>
 	<tr>
 		<td>Password:</td><br>
-		<td><input type="password" class="text" name="pass"></td>
+		<td><input type="password" class="text" name="password"></td>
 	</tr>
 	</table><br>
 	<center><b><input type="submit" class="button" name="login" value="Sign In"></b></center><br>
@@ -112,16 +112,16 @@ require('db.php');
 		
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
-	$sql = "select * from sponsordetails where username = '".$username."'AND password = '".$password."' limit 1";
+	$sql = "SELECT * from sponsordetails where username = '$username' and password='$password'";
 	$result = mysqli_query($con,$sql);
-	
-	if($result){
+		$rows = mysqli_num_rows($result);
+	if($rows==1){
 	
 		//echo "<script type='text/javascript'>alert('')</script>";
 		header("Location: http://localhost/Scholarship/Sponsorhome.php?q=$username");
 		exit();
 	}
-	elseif($result1==false){
+	elseif($rows==false){
 		echo "<script type='text/javascript'>alert('Wrong username or password')</script>";
 		}
 	}

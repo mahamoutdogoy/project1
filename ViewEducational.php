@@ -115,6 +115,7 @@ h2
 <body>
 <div class="menu">
 <ul>
+   <li><a href="alldetails.php">Home</a></li>
  <li><a href="#">STUDENT</a></li>
  <li><a href="#">DONOR</a>
   <ul>

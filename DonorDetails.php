@@ -66,12 +66,12 @@
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
   			<li style="float:left"><a class="active"href="Home.php">Home</a></li>
-  			<li><a href="PersonalDetails.php">About</a></li>
+  			<li><a href="">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
-  			<li><a href="">Admin</a></li>
-  			<li><a href="Donation.php">Donate</a></li>
-  			<li><a href="Donation.php">Sponsor</a></li>
-  			<li><a href="">Contact Us</a></li>
+  			<li><a href="AdminLog.php">Admin</a></li>
+  			<li><a href="DonorSignin.php">Donate</a></li>
+        <li><a href="SponsorSignin.php">Sponsor</a></li>
+  			<li><a href="contact.php">Contact Us</a></li>
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li>
 	</ul></align>

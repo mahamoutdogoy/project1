@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="jquery.min.js"></script>
 	<center><h1>Family Details</h1></center>
-</head>
+
 <style>
 		body
 		{
@@ -74,6 +75,7 @@
     		color: white;
 		}
 	</style>
+	</head>
 	<body>
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
@@ -104,12 +106,13 @@
 					</tr>
 					<tr>
 						<td><font color="white" size="4">Income:</font></td>
-						<td><input type="text" name ="mincome" placeholder="Mother's Income" required></td>
-						<td><input type="text" name ="fincome" placeholder="Father's Income" required></td>
+						<td><input type="number" name ="mincome" class="number" required></td>
+						<td><input type="number" name ="fincome" class="number" required></td>
 					</tr>
+
 					<tr>
 						<td><font color="white" size="4">Total Income:</font></td>
-						<td><input type="text" name ="tincome" placeholder="Rs."></td>
+						<td><input type="text" name ="tincome" id="tincome" readonly></td>
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Username:</font></td>
@@ -124,7 +127,26 @@
 		<center><input type="submit" name="submit" value="Next" class="button"><br><br>
 		<input type="reset" value="Clear" class="button"><br><br></center>
 		</form>
+	
+
+
+	<script>
+    $('.number').keyup(function() {
+        var sum = 0;
+        $('.number').each(function() {
+            sum += Number($(this).val());
+        });
+        $('#tincome').val(sum);
+    });
+</script>
+
 	</body>
+
+
+
+
+
+
 </html>
 <?php
 require('db.php');

@@ -68,16 +68,16 @@
 	<body>
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
-  			<!-- <li style="float:left"><a class="active"href="Home.php">Home</a></li>
+  			 <li style="float:left"><a class="active"href="Home.php">Home</a></li>
   			<li><a href="PersonalDetails.php">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
-  			<!-- <li><a href="Registration.php">Register</a></li> -->
-  			<li><a href="">Admin</a></li>
-  			<li><a href="Donation.php">Donate</a></li>
-  			<li><a href="Donation.php">Sponsor</a></li>
-  			<li><a href="">Contact Us</a></li>
+  	
+  			<li><a href="adminhome.php">Admin</a></li>
+  			<li><a href="DonorSignin.php">Donate</a></li>
+  			<li><a href="SponsorSignin.php">Sponsor</a></li>
+  			<li><a href="contact.php">Contact Us</a></li>
   			<li><a href="">FAQ</a></li>
-  			<li><a href="">Feedback</a></li> -->
+  			<li><a href="">Feedback</a></li> 
 	</ul></align>
 	<table>
 	<table cellpadding="15" align="center" class="table">
@@ -116,7 +116,7 @@ require('db.php');
 		$result = mysqli_query($con,$query) or die(mysql_error());
 		$rows = mysqli_num_rows($result);
         if($rows==1){
-			$_SESSION['email'] = $username;
+			$_SESSION['email'] = $email;
 			header("Location: PersonalDetails.php"); // Redirect user to index.php
             }else{
 				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";

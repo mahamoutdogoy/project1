@@ -286,13 +286,15 @@
             <th>Student gender</th>
             <th>Student age</th>
             <th>Sponsored amount</th>
+            <th>Date of Sponsoring</th>
+
           </tr> 
           <tr>
           <?php
           require('db.php');
   
                //storing the selected value in the php variable  
-            $query3 = "SELECT sponsored.sponusern, sponsored.amount, sponsored.usern, personal.firstname, personal.lastname, personal.age, registration.gender FROM sponsored LEFT JOIN personal ON sponsored.usern = personal.usern LEFT JOIN registration ON sponsored.usern = registration.username";
+            $query3 = "SELECT sponsored.sponusern, sponsored.amount, sponsored.trn_date, sponsored.usern, personal.firstname, personal.lastname, personal.age, registration.gender FROM sponsored LEFT JOIN personal ON sponsored.usern = personal.usern LEFT JOIN registration ON sponsored.usern = registration.username";
             $result3 = $con->query($query3);
             while($rows3 = mysqli_fetch_array($result3)){
               $sponusern = $rows3['sponusern'];  
@@ -302,6 +304,7 @@
               $gender = $rows3['gender'];
               $age = $rows3['age'];
               $amount = $rows3['amount'];
+              $trn_date = $rows3['trn_date'];
 
               ?>
               <tr>
@@ -312,6 +315,7 @@
               <td><?php echo $gender; ?></td>
               <td><?php echo $age; ?></td>
               <td><?php echo $amount; ?></td>
+              <td><?php echo $trn_date; ?></td>
               </tr>
 
               <?php

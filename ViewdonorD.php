@@ -283,7 +283,7 @@
             <th>Donor username</th>
             <th>Donor Email</th>
             <th>Donor phone</th>
-            <th>Donor password</th>
+           <!--  <th>Donor password</th> -->
             <th>Donor gender</th>
           </tr> 
           <tr>
@@ -297,14 +297,14 @@
               $username = $rows3['username'];  
               $email = $rows3['email'];
               $phone = $rows3['phone'];
-              $password = $rows3['password'];
+              // $password = $rows3['password'];
               $gender = $rows3['gender'];
               ?>
               <tr>
               <td><?php echo $username; ?></td>
               <td><?php echo $email; ?></td>
               <td><?php echo $phone; ?></td>
-              <td><?php echo $password; ?></td>
+              <!-- <td><?php  $password; ?></td> -->
               <td><?php echo $gender; ?></td>
               </tr>
 

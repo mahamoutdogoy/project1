@@ -71,19 +71,19 @@
 	<link rel="stylesheet" type="text/css" href="Horizontal.css">
 	<ul>
   			<li style="float:left"><a class="active"href="Home.php">Home</a></li>
-  			<li><a href="PersonalDetails.php">About</a></li>
+  			<li><a href="">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
-  			<li><a href="">Admin</a></li>
-  			<li><a href="Donation.php">Donate</a></li>
-  			<li><a href="Donation.php">Sponsor</a></li>
-  			<li><a href="">Contact Us</a></li>
+  			<li><a href="AdminLog.php">Admin</a></li>
+  			<li><a href="DonorSignin.php">Donate</a></li>
+            <li><a href="SponsorSignin.php">Sponsor</a></li>
+  			<li><a href="contact.php">Contact Us</a></li>
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li>
 	</ul></align>
 		<table cellpadding="20" align="center" class="table">
 			<tr>
 				<td>
-				<center><img src="images/Capture.PNG" ></center><br>
+				<!-- <center><img src="images/Capture.PNG" ></center><br> -->
 				<center><form action="" method="post"> 
 					<?php
 						$usern2  = $_GET['q']; 
@@ -136,14 +136,14 @@ require('db.php');
 		$year = stripslashes($_REQUEST['year']);
 		$year = mysqli_real_escape_string($con,$year);
 
-		// $trn_date = date("Y-m-d H:i:s");
-        $query = "INSERT into `payment` (username,card,amount,cardnum,cvv,month,year) VALUES ('$username','$card','$amount','$cardnum','$cvv','$month','$year')";
-        $result = mysqli_query($con,$query);
-        
-      if($result){
-      	
+		$trn_date = date("Y-m-d H:i:s");
 
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='Signin.php'> </a></div>"; 
+        $query = "INSERT into `payment` (username,card,amount,cardnum,cvv,month,year,trn_date) VALUES ('$username','$card','$amount','$cardnum','$cvv','$month','$year','$trn_date')";
+        $result = mysqli_query($con,$query);
+        if($result){
+      	
+      			// header("Location: ThanksD.php");
+        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='ThanksD.php'> </a></div>"; 
 
 
 

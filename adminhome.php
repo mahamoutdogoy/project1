@@ -236,7 +236,7 @@ button
             <ul>
                <li><a href='scholars.php'><span>Scholars</span></a></li>
                <li class='last'><a href='Sponsored.php'><span>Sponsored</span></a></li>
-               <li class='active has-sub'><a href='#'><span>All details</span></a>
+               <li class='active has-sub'><a href='alldetails.php'><span>All details</span></a>
 
 
                 </ul>
