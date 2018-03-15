@@ -303,9 +303,9 @@ table
 
          <li class=' active has-sub'><a href='#'><span>Delete</span></a>
             <ul>
-               <li class="has-sub"><a href='#'><span>Sub </span></a></li>
+               <li class="has-sub"><a href='DeleteS.php'><span>Duplicate </span></a></li>
              
-               <li class='last'><a href='#'><span>Sub </span></a></li>
+              
             </ul>
         </li>
 
@@ -316,8 +316,8 @@ table
                   <li class='active has-sub'><a href='#'><span>reward</span></a>
                       
                   <ul>
-                           <li class="last"><a href='#'><span>Sub Product</span></a></li>
-                           <li class='last'><a href='#'><span>Sub </span></a></li>
+                           <li class="last"><a href='#'><span>Update</span></a></li>
+                           
                   </ul>
                </li>
 

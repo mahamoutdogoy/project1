@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<title>Registration</title>
   	<center><h1>Registration Page</h1></center>
 </head>
 	<style>
@@ -72,17 +74,17 @@
 		<table cellpadding="20" align="center" class="table">
 			<tr>
 				<td>
-				<center><img src="images/Capture.PNG" ></center><br>
-				<form action ="" method="POST">
+				<!-- <center><img src="images/Capture.PNG" ></center><br> -->
+				<form action = "" method="POST">
 					<input type="text" class="text" name="username" placeholder="Username" required><br>
 					<br>					
 					<input type="email" class="text" name="email" placeholder="Email ID" required><br>
 					<br>					
-					<input type="text" class="text" name="phone" placeholder="Phone Number" required><br>
+					<input type="number" class="text" name="phone" placeholder="Phone Number" required><br>
 					<br>					 
-					<input type="password" class="text" name="password" placeholder="Password"required><br>
+					<input type="password" class="text" name="password" placeholder="Password" required><br>
 					<br>
-					<input type="password" class="text" name="cpassword" placeholder="Confirm Password"required><br>
+					<input type="password" class="text" name="cpassword" placeholder="Confirm Password" required><br>
 					<br>
 					<font color="white">Gender:</font><br><br>
 					<font color="white"><input type="radio" name="gender" value="Male">Male
@@ -97,6 +99,7 @@
 		
 	</body>
 </html>
+
 <?php
 
 require('db.php');
@@ -106,32 +109,22 @@ require('db.php');
 		$username = mysqli_real_escape_string($con,$username);
 		$email = stripslashes($_REQUEST['email']);
 		$email = mysqli_real_escape_string($con,$email);
-		$password = stripslashes($_REQUEST['password']);
-		$password = mysqli_real_escape_string($con,$password);
-
 		$phone = stripslashes($_REQUEST['phone']);
 		$phone = mysqli_real_escape_string($con,$phone);
-
+		$password = stripslashes($_REQUEST['password']);
+		$password = mysqli_real_escape_string($con,$password);
 		$gender = stripslashes($_REQUEST['gender']);
 		$gender = mysqli_real_escape_string($con,$gender);
-
-
-
-        $query = "INSERT INTO `registration` (username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";
-        $result = mysqli_query($con,$query);
-      if($result){
-      	
-                       header("Location: http://localhost/Scholarship/PersonalDetails.php?q=$username"); 
+        $query = "INSERT INTO `registration`(username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";
+        $result10 = mysqli_query($con,$query);
+      if($result10){
+      	 header("Location: http://localhost/Scholarship/PersonalDetails.php?q=$username"); 
+      	  }
         	  // echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='PersonalDetails.php'> fill details </a></div>"; 
-
-
-   
-
-
- }
- else{
+              
+     else{
  		echo "problem";
-    }
+          }
  }
 
 	

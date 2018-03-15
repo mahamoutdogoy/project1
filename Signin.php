@@ -123,7 +123,7 @@ require('db.php');
 				}
 
 
-if(isset($_POST['register'])){
+         if(isset($_POST['register'])){
 		header("Location: Registration.php");
 	}
 	}
