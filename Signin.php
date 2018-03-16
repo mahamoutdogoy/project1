@@ -72,7 +72,7 @@
   			<li><a href="PersonalDetails.php">About</a></li>
   			<li><a href="Signin.php">Application</a></li>
   	
-  			<li><a href="adminhome.php">Admin</a></li>
+  			<li><a href="AdminLog.php">Admin</a></li>
   			<li><a href="DonorSignin.php">Donate</a></li>
   			<li><a href="SponsorSignin.php">Sponsor</a></li>
   			<li><a href="contact.php">Contact Us</a></li>

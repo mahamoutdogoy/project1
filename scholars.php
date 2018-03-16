@@ -353,20 +353,26 @@ table
             <th>Scholar first name</th>
             <th>Scholar last name</th>
             <th>Gender</th>
+             <th>Instutition Studying</th>
+             <th>Fee Paid</th>
             <th>amount</th>
+
           </tr> 
           <tr>
           <?php
           require('db.php');
   
                //storing the selected value in the php variable  
-            $query3 = "SELECT scholars.usern, personal.firstname, personal.lastname, registration.gender, scholars.amount FROM scholars LEFT JOIN personal ON scholars.usern = personal.usern LEFT JOIN registration ON scholars.usern = registration.username";
+            // $query3 = " SELECT scholars.usern,scholars.amount, personal.firstname, personal.lastname, registration.gender, education.insdeg, fees.total FROM scholars LEFT JOIN personal ON scholars.usern = personal.usern LEFT JOIN registration ON scholars.usern = registration.username LEFT JOIN education ON scholars.usern=education.usern LEFT JOIN fees ON scholars.usern=fees.usern ";
+          $query3 = " SELECT registration.username, personal.firstname, personal.lastname, registration.gender, education.insdeg, fees.total, scholars.amount FROM registration LEFT JOIN personal ON registration.username = personal.usern LEFT JOIN education ON registration.username = education.usern LEFT JOIN fees ON registration.username = fees.usern LEFT JOIN scholars ON registration.username = scholars.usern WHERE registration.username IN (SELECT usern FROM scholars) ";
             $result3 = $con->query($query3);
             while($rows3 = mysqli_fetch_array($result3)){
-              $usern = $rows3['usern'];  
+              $usern = $rows3['username'];  
               $fristname = $rows3['firstname'];
               $lastname = $rows3['lastname'];
               $gender = $rows3['gender'];
+              $insdeg = $rows3['insdeg']; 
+              $total = $rows3['total']; 
               $amount = $rows3['amount']; 
               ?>
               <tr>
@@ -374,6 +380,8 @@ table
               <td><?php echo $fristname; ?></td>
               <td><?php echo $lastname; ?></td>
               <td><?php echo $gender; ?></td>
+              <td><?php echo $insdeg; ?></td>
+              <td><?php echo $total; ?></td>
               <td><?php echo $amount; ?></td>
               </tr>
 

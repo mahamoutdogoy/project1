@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<center><h1>Personal Details</h1></center>
+	<center><h1> Details</h1></center>
 </head>
 <style>
 		body

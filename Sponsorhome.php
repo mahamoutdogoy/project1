@@ -58,6 +58,7 @@
     		text-decoration: none;
     		display: inline-block;
     		font-size: 16px;
+
 		}
 		.button:hover
 		{
@@ -70,13 +71,14 @@
 
  {
   float: right;
-    padding-top: : 100px;
+    padding-bottom : 200px;
   
 }
 .logout a
 {
   
   text-decoration: none;
+
 
 }
 button
@@ -90,6 +92,7 @@ p
 	font-family: 'Cairo', sans-serif;
   font-size: 20px;
   text-align: center;
+
   
 }
 .question
@@ -127,6 +130,12 @@ p
   			<li><a href="">Feedback</a></li>
 	</ul></align>
 
+	<div class="logout">
+  
+    <h2><button><a href="logout.php">Logout here</a> </h2></button>
+</div>
+
+
             
     <p>
     	
@@ -147,11 +156,7 @@ After you sponsor the student, the particular contact <br> student details are s
 
 
 
-	<div class="logout">
-  
-    <h2><button><a href="logout.php">Logout here</a> </h2></button>
-</div>
-
+	
 	
 	<form action="" method="POST">
 						<?php

@@ -4,7 +4,7 @@
 
 <head>
   
-
+   <!--  <link rel="stylesheet" type="text/css" href="Horizontal.css"> -->
 
 
 </head>
@@ -12,8 +12,8 @@
 <style>
   
    .holder {
-  width:100%;
-  height:400px;
+  width:100%; 
+  height:500px;
   text-align:center;
   margin-top:50px;
   font-size:200%;
@@ -319,6 +319,7 @@ input[type=submit] {
 
 
 
+
 </style>
 
 
@@ -326,6 +327,18 @@ input[type=submit] {
 
 
   <body>
+
+   <!--  <ul>
+            <li style="float:left"><a class="active"href="Home.php">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="Signin.php">Application</a></li>
+            <li><a href="AdminLog.php">Admin</a></li>
+            <li><a href="DonorSignin.php">Donate</a></li>
+        <li><a href="SponsorSignin.php">Sponsor</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Feedback</a></li>
+        </ul> -->
     
 
 
@@ -334,12 +347,12 @@ input[type=submit] {
 </div>
 
 <div id="contactform">
-  <form id="contact-form" class="contact-form" action="#" method="post">
+  <form id="contact-form" class="contact-form" action="" method="post">
 
     <ul>
       <li class="comment">
         <!--Tip: textarea breaks if tags are not in the same line or broken up somehow -->
-        <textarea class="text-comment" rows="2" id="text" spellcheck="false" placeholder="Say something." min-length="2" max-length="500" required></textarea>
+        <textarea class="text-comment" name="message" rows="2" id="text" spellcheck="false" placeholder="Say something." min-length="2" max-length="500" required></textarea>
         <label for="message">Message</label>
         <span class="notification"></span>
         <span class="required"><strong><small><em> (required)</em></small></strong></span>
@@ -551,4 +564,29 @@ function testfunc() {
 
 
 </html>
+
+
+
+
+<?php
+    require('db.php');
+    // If form submitted, insert values into the database.
+    if (isset($_REQUEST['message'])){
+        $message = stripslashes($_REQUEST['message']); // removes backslashes
+        $message = mysqli_real_escape_string($con,$message); //escapes special characters in a string
+        $name = stripslashes($_REQUEST['name']);
+        $name = mysqli_real_escape_string($con,$name);
+        $email = stripslashes($_REQUEST['email']);
+        $email = mysqli_real_escape_string($con,$email);
+
+        
+        $query = "INSERT into `contact` (message, name, email, ) VALUES ('$message', 'name', '$email')";
+        $result = mysqli_query($con,$query);
+        if($result){
+            echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='home.php'>home</a></div>";
+        }
+    }
+?>
+
+
 

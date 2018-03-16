@@ -17,7 +17,7 @@
 	<body>
 
 		<ul>
-  			<li style="float:left"><a class="active"href="Home.php">Home</a></li>
+  			<li style="float:left"><a class="active" href="adminhome.php">Home</a></li>
  
   			<li><a href="ViewPersonal.php">Personal</a></li>
   			<li><a href="ViewFamily.php">Family</a></li>
