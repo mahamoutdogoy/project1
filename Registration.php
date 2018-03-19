@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+
 <title>Registration</title>
   	<center><h1>Registration Page</h1></center>
 </head>
@@ -82,9 +83,9 @@
 					<br>					
 					<input type="number" class="text" name="phone" placeholder="Phone Number" required><br>
 					<br>					 
-					<input type="password" class="text" name="password" placeholder="Password" required><br>
+					<input type="password" class="text" name="password" id="password" placeholder="Password" required><br>
 					<br>
-					<input type="password" class="text" name="cpassword" placeholder="Confirm Password" required><br>
+					<input type="password" class="text" name="conpassword" id="conpassword" placeholder="Confirm Password" required><br>
 					<br>
 					<font color="white">Gender:</font><br><br>
 					<font color="white"><input type="radio" name="gender" value="Male">Male
@@ -113,19 +114,33 @@ require('db.php');
 		$phone = mysqli_real_escape_string($con,$phone);
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
+		$conpassword = stripslashes($_REQUEST['conpassword']);
+		$conpassword = mysqli_real_escape_string($con,$conpassword);
 		$gender = stripslashes($_REQUEST['gender']);
 		$gender = mysqli_real_escape_string($con,$gender);
+       
+
+		if ($password!=$conpassword) {
+		
+			echo " passwords doesn't match";
+		}
+		else{
         $query = "INSERT INTO `registration`(username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";
         $result10 = mysqli_query($con,$query);
       if($result10){
-      	 header("Location: http://localhost/Scholarship/PersonalDetails.php?q=$username"); 
+      	   header("Location: http://localhost/Scholarship/PersonalDetails.php?q=$username"); 
+      	// echo "<button><a href= 'http:localhost/Scholarship/PersonalDetails.php?q=$username' >Register</a></button>";
+      	
       	  }
         	  // echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='PersonalDetails.php'> fill details </a></div>"; 
-              
+         
      else{
  		echo "problem";
           }
- }
 
-	
+
+	   }
+	   }
+
+	   
 ?>

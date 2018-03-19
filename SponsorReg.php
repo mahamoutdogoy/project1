@@ -83,7 +83,7 @@
 					<br>					 
 					<input type="password" class="text" name="password" placeholder="Password"required><br>
 					<br>
-					<input type="password" class="text" name="password" placeholder="Confirm Password"required><br>
+					<input type="password" class="text" name="conpassword" placeholder="Confirm Password"required><br>
 					<br>
 					<font color="white">Gender:</font><br><br>
 					<font color="white"><input type="radio" name="gender" value="Male">Male
@@ -109,12 +109,17 @@ require('db.php');
 		$email = mysqli_real_escape_string($con,$email);
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
-
+        $conpassword = stripslashes($_REQUEST['conpassword']);
+		$conpassword = mysqli_real_escape_string($con,$conpassword);
 		$phone = stripslashes($_REQUEST['phone']);
 		$phone = mysqli_real_escape_string($con,$phone);
 
 		$gender = stripslashes($_REQUEST['gender']);
 		$gender = mysqli_real_escape_string($con,$gender);
+		if ($password!=$conpassword) {
+		
+			echo " passwords doesn't match";
+		}
 
 		// $trn_date = date("Y-m-d H:i:s");
         $query = "INSERT into `sponsordetails` (username,email,phone,password,gender) VALUES ('$username','$email','$phone','$password','$gender')";

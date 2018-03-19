@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<center><h1>Personal Details</h1></center>
+	<title>Personal</title>
 </head>
 <style>
 		body
@@ -52,18 +54,6 @@
 		{
 			width:340px;
 		}
-		.button 
-		{
-    		background-color: white;
-    		border:2px solid #484646;
-    		width:200px;
-    		color: black;
-    		padding: none;
-   			text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
-    		font-size: 16px;
-		}
 		.radio
 		{
 			width:100px;
@@ -98,16 +88,16 @@
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Date of Birth:</font></td>
-						<td><input type="date" name="dob" placeholder="DOB" required></td>
+						<td><input type="date" name="dob" placeholder="DOB"  required></td>
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Age:</font></td>
-						<td><input type="text" name="age" placeholder="Age" required></td>
+						<td><input type="text"    name="age"  placeholder="Age" required></td>
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Aadhaar No:</font></td>
-						<td><input type="text" name="adhar" placeholder="Aadhaar Number" required></td>
-					</tr>
+						<td><input type="text" name="adhar" placeholder="Aadhaar Number" maxlength="12" required></td>
+					</tr> 
 					<tr>
 						<td><font color="white" size="5">Address:</font></td>
 						<td><input type="text" name="address"placeholder="Address" required></td>
@@ -126,7 +116,7 @@
 					</tr>
 					<tr>
 						<td><font color="white" size="5">Postal Code:</font></td>
-						<td><input type="text" name="pin" placeholder="Postal Code" required></td>
+						<td><input type="number" name="pin" placeholder="Postal Code" maxlength="6" required></td>
 					</tr>
 
 					<tr>
@@ -140,7 +130,7 @@
 						<?php
 						$usern  = $_GET['q']; 
 						?>
-						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required></td>
+						<td><input type="text" name="usern" placeholder="Username" value="<?php echo $usern?>"  readonly></td>
 					</tr>				
 		</table>
 		<br>
@@ -186,8 +176,8 @@ require('db.php');
    if($result){
    	//          $_SESSION['usern'] = $usern;
 			  // header("Location:Education.php");
-			   	  
-        	  echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/Family.php?q=$usern'> fill details</a></div>"; 
+			   // header("Location: http://localhost/Scholarship/Family.php?q=$usern");  	  
+        	   echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/Family.php?q=$usern'> fill details</a></div>"; 
         	}	
 }
 ?>

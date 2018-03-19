@@ -97,6 +97,7 @@
 		</table>
 	<h3><center><a href="Home.php">Home</a></center></h3>
 	</body>
+
 </html>
 
 <?php
@@ -118,14 +119,32 @@ require('db.php');
         if($rows==1){
 			$_SESSION['email'] = $email;
 			header("Location: PersonalDetails.php"); // Redirect user to index.php
-            }else{
-				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-				}
+                 
+	          
+            }
+            else
+            {
+				// echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div
+				// echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div
+
+                 echo "Username/password is incorrect";    
+			}
+
 
 
          if(isset($_POST['register'])){
 		header("Location: Registration.php");
-	}
-	}
+	    } 
+
+	   //  if ($_POST["password"] != $password){
+    //     // header("Location: http://signin.com/");
+    //     //  exit;
+	   //  	echo "username or password is wrong";
+    // }
+
+	    
+}
+
+
 
 ?>
