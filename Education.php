@@ -119,7 +119,7 @@
 			<tr>
 				<td><font color="white"size="4">Degree</font></td>
 				<td><input type="text" name="degins" required></td>
-				<td><input type="text" name="degboard"></td>
+				<td><input type="text" name="degboard" readonly></td>
 				<td><input type="text" name="degyop" required></td>
 				<td><input type="text" name="degper" class="marks"required></td>
 			</tr>

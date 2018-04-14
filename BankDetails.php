@@ -42,7 +42,7 @@
 		{
     		background-color: white;
     		border:2px solid #484646;
-    		width:200px;
+    		width:330px;
     		color: black;
     		padding: none;
    			text-align: center;
@@ -70,7 +70,7 @@
 		<table cellpadding="20" align="center" class="table">
 			<tr>
 				<td>
-				<center><img src="images/Capture.PNG" ></center><br>
+				<!-- <center><img src="images/Capture.PNG" ></center><br> -->
 				<form action="" method="POST">
 
 					<input type="text" class="text" name="name" placeholder="Name as per Bank Account" required><br>
@@ -93,7 +93,7 @@
 						$usern  = $_GET['q']; 
 						?>
 						<input type="text" class="text" name="usern" placeholder="Username" value="<?php echo $usern?>" required><br><br>
-					<center><b><input type="submit" class="button" name="info" value="Next"></b></center><br>
+					<input type="submit" class="button" name="info" value="Next"></b><br>
 				</form>
 			</td>
 			</tr>

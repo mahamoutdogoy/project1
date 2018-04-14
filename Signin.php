@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   	<meta name="Description" content="A Registration Form">
   	<meta name="Author" content="Nanda">
-  	<center><h1>Sign In Page</h1></center>
+  <!-- 	<center><h1>Sign In Page</h1></center> -->
 </head>
 	<style>
 		body
@@ -79,10 +79,10 @@
   			<li><a href="">FAQ</a></li>
   			<li><a href="">Feedback</a></li> 
 	</ul></align>
-	<table>
-	<table cellpadding="15" align="center" class="table">
+	 <table>
+	<table cellpadding="15" align="center" class="table"> -->
 	<form action="" method="POST">
-	<tr>
+	 <tr>
 		<td>Email ID:</td>
 		<td><input type="email" class="text" name="email"></td>
 	</tr>
@@ -91,11 +91,13 @@
 		<td><input type="password" class="text" name="password"></td>
 	</tr>
 	</table><br>
-	<center><b><input type="submit" class="button" name="login" value="Sign In"></b></center><br>
-		<center><input type="reset" class="button" name="reset" value="Clear"></center><br>
+	<center><b><input type="submit" class="button" name="login" value="Sign In"></b></center><br> -->
+		<center><input type="reset" class="button" name="reset" value="Clear"></center><br> -->
+
 		<center><b><input type="submit" class="button" name="register" value="Register"></b></center><br>
 		</table>
 	<h3><center><a href="Home.php">Home</a></center></h3>
+	</form>
 	</body>
 
 </html>

@@ -178,6 +178,9 @@ require('db.php');
 			  // header("Location:Education.php");
 			   // header("Location: http://localhost/Scholarship/Family.php?q=$usern");  	  
         	   echo " <div class='form'<h3>You are registered successfully.</h3><br></a>Click here to <a href='http://localhost/Scholarship/Family.php?q=$usern'> fill details</a></div>"; 
-        	}	
+        	}
+        	else {
+        			echo " some problem" ;
+        		}	
 }
 ?>

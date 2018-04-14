@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
   	<meta name="Description" content="A Registration Form">
   	<meta name="Author" content="">
-  	<center><h1>DONATE FOR A CAUSE</h1></center>
+  	<center><h1>SPONSOR A KID TODAY</h1></center>
 </head>
 	<style>
 		body

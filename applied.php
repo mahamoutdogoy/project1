@@ -141,13 +141,13 @@ require('db.php');
    	//          $_SESSION['usern'] = $usern;
 			 // header("Location: FeeDetails.php");
 			   	 // echo "<div class='form'><h2>inserted successfully.</h2>";  
-                            echo " <div class='form'<h3>You are registered successfully.</a>Click here to <a href='Home.php'> fill details</a></div>"; 
+                            echo " <div class='form'<h3>You are registered successfully.</a>Click here to <a href='ThanksApp.php'>Home</a></div>"; 
         	}	
     if($result1){
-    	echo " <div class='form'<h3>scholarship registered.</a>Click here to <a href='Home.php'> fill details</a></div>"; 
+    	echo " <div class='form'<h3>scholarship registered.</a>Click here to <a href='ThanksApp.php'>Home</a></div>"; 
         	}
      if($result2){
-    	echo " <div class='form'<h3>sponorship registered.</a>Click here to <a href='Home.php'> fill details</a></div>"; 
+    	echo " <div class='form'<h3>sponorship registered.</a>Click here to <a href='ThanksApp.php'>Home</a></div>"; 
         	}	
 
 }
